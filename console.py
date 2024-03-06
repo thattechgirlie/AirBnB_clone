@@ -72,3 +72,16 @@ class HBNBCommand(cmd.Cmd):
         """ Signals exit of a program. """
         print (" ")
         return True
+    
+    def do_create(self, arg):
+        """Usage: create <class>
+        creates a new class instances and print its id.
+        """
+        arg1 = parse(arg)
+        if len(arg1) == 0:
+            print("**The name of the class is missing**")
+        elif arg1[0] not in HBNBCommand._classes:
+            print("**Class does not exist**")
+        else:
+            print(eval(arg1[0]().id))
+            storage.save()
