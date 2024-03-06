@@ -61,5 +61,14 @@ class HBNBCommand(cmd.Cmd):
                 if command[0] in argdict.keys():
                     call = "{} {}".format(argl[0], command[1])
                     return argdict[command[0]](call)
-        print("*** Unknown syntax: {}".format(arg))
+        print("*** Invalid syntax: {}".format(arg))
         return False
+
+    def do_quit(self, arg):
+        """ Exit command interpreter. """
+        return True
+
+    def do_EOF(self, arg):
+        """ Signals exit of a program. """
+        print (" ")
+        return True
