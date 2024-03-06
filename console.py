@@ -22,3 +22,23 @@ def parse(arg):
             retl = [i.strip(",") for i in lexer]
             retl.append(brackets.group())
             return retl
+
+class hbnb_commandline(cmd.Cmd):
+    """This is our command line terminal.
+        Attributes:
+            prompt(str): This is the command prompt.
+    """
+    prompt = "(hbnb)"
+    _classes = {
+            "BaseModel",
+            "User",
+            "State",
+            "City",
+            "Place",
+            "Amenity",
+            "Reviews"
+            }
+
+    def empty_line(self):
+        """ It does nothing on the empty input. """
+        pass
