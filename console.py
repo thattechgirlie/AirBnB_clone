@@ -3,6 +3,15 @@
 import cmd
 import re
 from shlex import split
+from models import storage
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
+
 
 def parse(arg):
     curly_braces = re.search(r"\{(.*?)\}", arg)
@@ -61,29 +70,29 @@ class HBNBCommand(cmd.Cmd):
                 if command[0] in argdict.keys():
                     call = "{} {}".format(argl[0], command[1])
                     return argdict[command[0]](call)
-        print("*** Invalid syntax: {}".format(arg))
+        print("*** Unknown syntax: {}".format(arg))
         return False
 
     def do_quit(self, arg):
-        """ Exit command interpreter. """
+        """Quit command to exit the program."""
         return True
 
     def do_EOF(self, arg):
-        """ Signals exit of a program. """
-        print (" ")
+        """EOF signal to exit the program."""
+        print("")
         return True
-    
+
     def do_create(self, arg):
         """Usage: create <class>
-        creates a new class instances and print its id.
+        Create a new class instance and print its id.
         """
-        arg1 = parse(arg)
-        if len(arg1) == 0:
-            print("**The name of the class is missing**")
-        elif arg1[0] not in HBNBCommand._classes:
-            print("**Class does not exist**")
+        argl = parse(arg)
+        if len(argl) == 0:
+            print("** class name missing **")
+        elif argl[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
         else:
-            print(eval(arg1[0]().id))
+            print(eval(argl[0])().id)
             storage.save()
 
     def do_show(self, arg):
