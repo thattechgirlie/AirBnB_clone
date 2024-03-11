@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is a representation of class State."""
 
+
 from models.base_model import BaseModel
 
 class State(BaseModel):
