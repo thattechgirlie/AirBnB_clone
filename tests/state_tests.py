@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+import os
+import models
+import unittest
+from datetime import datetime
+from time import sleep
+from models.state import State
+
+
 """Unittest module for class State."""
 
 """Defining unittest for models/state.py.
@@ -7,13 +15,6 @@ Unittest classes:
     TestState_save
     TestState_to_dict
 """
-
-import os
-import models
-import unittest
-from datetime import datetime
-from time import sleep
-from models.state import State
 
 
 class TestState_instantiation(unittest.TestCase):

@@ -17,7 +17,7 @@ class TestBaseModel_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the BaseModel class."""
 
     def test_no_args_instantiates(self):
-        # It checks if the class BaseModel is the same type as the instance of BaseModel.
+        # Checks if class BaseModel is same type as instance of BaseModel.
         self.assertEqual(BaseModel, type(BaseModel()))
 
     def test_new_instance_stored_in_objects(self):
@@ -25,7 +25,7 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertIn(BaseModel(), models.storage.all().values())
 
     def test_id_is_public_str(self):
-        # It checks if the type of the id attribute of the BaseModel class is a string.
+        # Checks if type of the id attribute of BaseModel class is a string.
         self.assertEqual(str, type(BaseModel().id))
 
     def test_created_at_is_public_datetime(self):
@@ -56,9 +56,9 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_str_representation(self):
         # 1. We’re creating a datetime object.
         # 2. We’re creating a BaseModel object.
-        # 3. We’re setting the id, created_at, and updated_at attributes of the BaseModel object.
+        # 3. We’re setting the id, created_at, updated_at of BaseModel object.
         # 4. We’re calling the __str__ method of the BaseModel object.
-        # 5. We’re checking that the output of the __str__ method contains the id, created_at, and updated_at attributes.
+        # 5. We’re checking that the output of  __str__ has id, created_at, updated_at attributes.
         dt = datetime.today()
         dt_repr = repr(dt)
         bm = BaseModel()
@@ -96,10 +96,11 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_instantiation_with_args_and_kwargs(self):
         # 1. We create a datetime object with the current time.
         # 2. We convert the datetime object to a string in ISO 8601 format.
-        # 3. We create a BaseModel object with the id “345” and the created_at and updated_at attributes set to the ISO 8601 string.
+        # 3. We create a BaseModel object with the id “345” and
+        #+the created_at and updated_at attributes set to the ISO 8601 string.
         # 4. We check that the id attribute is set to “345”.
-        # 5. We check that the created_at attribute is set to the datetime object.
-        # 6. We check that the updated_at attribute is set to the datetime object.
+        # 5. We check that the created_at attribute is set to datetime object.
+        # 6. We check that the updated_at attribute is set to datetime object.
         dt = datetime.today()
         dt_iso = dt.isoformat()
         bm = BaseModel("12", id="345", created_at=dt_iso, updated_at=dt_iso)
