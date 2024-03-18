@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is a representatio of class Review."""
 
+
 from models.base_model import BaseModel
 
 class Review(BaseModel):

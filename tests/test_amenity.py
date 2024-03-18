@@ -1,10 +1,4 @@
 #!/usr/bin/python3
-""" Defines unittests for models/amenity.py.
-Unittest classes:
-    TestAmenity_instantiation
-    TestAmenity_save
-    TestAmenity_to_dict
-"""
 import os
 import models
 import unittest
@@ -13,11 +7,19 @@ from time import sleep
 from models.amenity import Amenity
 
 
+""" Defines unittests for models/amenity.py.
+Unittest classes:
+    TestAmenity_instantiation
+    TestAmenity_save
+    TestAmenity_to_dict
+"""
+
+
 class TestAmenity_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Amenity class."""
 
     def test_no_args_instantiates(self):
-        # It checks if the class Amenity is the same type as the instance of the class Amenity.
+        # Checks if class Amenity is the same type as instance of class Amenity.
         self.assertEqual(Amenity, type(Amenity()))
 
     def test_new_instance_stored_in_objects(self):

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [200~
 Curriculum
 SE Foundations
@@ -560,3 +561,6 @@ File: 103-index.html, styles/103-common.css, styles/103-header.css, styles/103-f
  
 Copyright © 2024 ALX, All rights reserved.
 ~
+=======
+web_static
+>>>>>>> 995f4523bd25ae7c8a6d891613303d2f8fa97cb7
